@@ -1,0 +1,76 @@
+2024-03-04T14:46:44.605+05:30  INFO 5364 --- [main] com.foodtogo.FoodToGoApplication         : Starting FoodToGoApplication using Java 17.0.8.1 with PID 5364 (C:\Users\tkavya\eclipse-workspace\food-to-go\target\classes started by tkavya in C:\Users\tkavya\eclipse-workspace\food-to-go)
+2024-03-04T14:46:44.621+05:30  INFO 5364 --- [main] com.foodtogo.FoodToGoApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-03-04T14:46:45.245+05:30  INFO 5364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-04T14:46:45.336+05:30  INFO 5364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 6 JPA repository interfaces.
+2024-03-04T14:46:46.196+05:30  INFO 5364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-04T14:46:46.211+05:30  INFO 5364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-04T14:46:46.212+05:30  INFO 5364 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-03-04T14:46:46.434+05:30  INFO 5364 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-04T14:46:46.440+05:30  INFO 5364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-04T14:46:46.441+05:30  INFO 5364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1748 ms
+2024-03-04T14:46:46.634+05:30  INFO 5364 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-04T14:46:46.740+05:30  INFO 5364 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-03-04T14:46:46.800+05:30  INFO 5364 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-04T14:46:47.122+05:30  INFO 5364 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-04T14:46:47.160+05:30  INFO 5364 --- [main] com.zaxxer.hikari.HikariDataSource       : foodtogo - Starting...
+2024-03-04T14:46:47.570+05:30  INFO 5364 --- [main] com.zaxxer.hikari.pool.HikariPool        : foodtogo - Added connection com.mysql.cj.jdbc.ConnectionImpl@25464154
+2024-03-04T14:46:47.573+05:30  INFO 5364 --- [main] com.zaxxer.hikari.HikariDataSource       : foodtogo - Start completed.
+2024-03-04T14:46:47.652+05:30  WARN 5364 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-04T14:46:48.828+05:30  INFO 5364 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-04T14:46:48.986+05:30  INFO 5364 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04T14:46:49.602+05:30  WARN 5364 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-04T14:46:49.632+05:30  INFO 5364 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-04T14:46:50.069+05:30  INFO 5364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-04T14:46:50.078+05:30  INFO 5364 --- [main] com.foodtogo.FoodToGoApplication         : Started FoodToGoApplication in 6.145 seconds (process running for 7.281)
+2024-03-04T14:47:04.924+05:30  INFO 5364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-04T14:47:04.924+05:30  INFO 5364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-04T14:47:04.927+05:30  INFO 5364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-03-04T14:47:14.200+05:30  WARN 5364 --- [http-nio-8080-exec-7] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [227] milliseconds.
+2024-03-04T14:47:24.759+05:30  WARN 5364 --- [http-nio-8080-exec-10] FoodcartController.class                 : cart is empty
+2024-03-04T14:48:07.195+05:30  INFO 5364 --- [http-nio-8080-exec-10] c.foodtogo.controller.OwnerController    : Owner logged in:owner@gmail.com
+2024-03-04T14:48:23.770+05:30  INFO 5364 --- [http-nio-8080-exec-8] c.f.controller.FoodItemController        : owner reached manage food items page
+2024-03-04T14:48:29.660+05:30  INFO 5364 --- [http-nio-8080-exec-3] c.f.controller.FoodItemController        : owner opened food form
+2024-03-04T14:48:31.734+05:30  INFO 5364 --- [http-nio-8080-exec-1] c.f.controller.FoodItemController        : owner reached manage food items page
+2024-03-04T14:49:40.899+05:30  INFO 5364 --- [http-nio-8080-exec-10] c.f.controller.CustomerController        : User logged in:kavya@gmail.com
+2024-03-04T14:49:47.004+05:30  INFO 5364 --- [http-nio-8080-exec-8] c.f.controller.RestaurantController      : searched for restaurant :lot
+2024-03-04T14:49:49.579+05:30  INFO 5364 --- [http-nio-8080-exec-2] FoodcartController.class                 : item added to cart successfully : 2
+2024-03-04T14:49:52.608+05:30  INFO 5364 --- [http-nio-8080-exec-9] FoodcartController.class                 : item is not available : 3
+2024-03-04T14:49:55.576+05:30  INFO 5364 --- [http-nio-8080-exec-7] FoodcartController.class                 : item added to cart successfully : 1
+2024-03-04T14:50:19.285+05:30  INFO 5364 --- [http-nio-8080-exec-9] c.foodtogo.controller.OrderController    : Customer placed order:kavya sree
+2024-03-04T14:50:25.204+05:30  INFO 5364 --- [http-nio-8080-exec-4] c.foodtogo.controller.OrderController    : customer viewed his order status
+2024-03-04T14:50:58.297+05:30  INFO 5364 --- [http-nio-8080-exec-3] c.foodtogo.controller.OwnerController    : Owner logged in:owner@gmail.com
+2024-03-04T14:51:00.164+05:30  INFO 5364 --- [http-nio-8080-exec-2] c.foodtogo.controller.OrderController    : owner updated order status
+2024-03-04T14:51:13.265+05:30  INFO 5364 --- [http-nio-8080-exec-5] c.foodtogo.controller.OrderController    : owner updated order status
+2024-03-04T14:51:20.724+05:30  INFO 5364 --- [http-nio-8080-exec-8] c.foodtogo.controller.OrderController    : customer viewed his order status
+2024-03-04T14:52:11.032+05:30  INFO 5364 --- [http-nio-8080-exec-10] c.foodtogo.controller.OrderController    : owner updated order status
+2024-03-04T14:52:28.095+05:30  INFO 5364 --- [http-nio-8080-exec-7] c.foodtogo.controller.OrderController    : owner updated order status
+2024-03-04T14:52:32.929+05:30  INFO 5364 --- [http-nio-8080-exec-4] c.foodtogo.controller.OrderController    : customer viewed his order status
+2024-03-04T14:54:44.546+05:30  WARN 5364 --- [http-nio-8080-exec-4] FoodcartController.class                 : cart is empty
+2024-03-04T14:54:59.830+05:30  INFO 5364 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-03-04T14:54:59.867+05:30  INFO 5364 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04T14:54:59.870+05:30  INFO 5364 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : foodtogo - Shutdown initiated...
+2024-03-04T14:54:59.885+05:30  INFO 5364 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : foodtogo - Shutdown completed.
+2024-03-04T16:23:45.081+05:30  INFO 17880 --- [main] com.foodtogo.FoodToGoApplication         : Starting FoodToGoApplication using Java 17.0.8.1 with PID 17880 (C:\Users\tkavya\eclipse-workspace\food-to-go\target\classes started by tkavya in C:\Users\tkavya\eclipse-workspace\food-to-go)
+2024-03-04T16:23:45.085+05:30  INFO 17880 --- [main] com.foodtogo.FoodToGoApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-03-04T16:23:45.763+05:30  INFO 17880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-04T16:23:45.868+05:30  INFO 17880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 6 JPA repository interfaces.
+2024-03-04T16:23:47.055+05:30  INFO 17880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-04T16:23:47.076+05:30  INFO 17880 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-04T16:23:47.078+05:30  INFO 17880 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-03-04T16:23:47.467+05:30  INFO 17880 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-04T16:23:47.477+05:30  INFO 17880 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-04T16:23:47.478+05:30  INFO 17880 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2319 ms
+2024-03-04T16:23:47.694+05:30  INFO 17880 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-04T16:23:47.859+05:30  INFO 17880 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-03-04T16:23:47.967+05:30  INFO 17880 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-04T16:23:48.504+05:30  INFO 17880 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-04T16:23:48.564+05:30  INFO 17880 --- [main] com.zaxxer.hikari.HikariDataSource       : foodtogo - Starting...
+2024-03-04T16:23:49.226+05:30  INFO 17880 --- [main] com.zaxxer.hikari.pool.HikariPool        : foodtogo - Added connection com.mysql.cj.jdbc.ConnectionImpl@61b8c9de
+2024-03-04T16:23:49.232+05:30  INFO 17880 --- [main] com.zaxxer.hikari.HikariDataSource       : foodtogo - Start completed.
+2024-03-04T16:23:49.369+05:30  WARN 17880 --- [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-04T16:23:51.187+05:30  INFO 17880 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-04T16:23:51.425+05:30  INFO 17880 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04T16:23:52.101+05:30  WARN 17880 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-04T16:23:52.134+05:30  INFO 17880 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-04T16:23:52.631+05:30  INFO 17880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-04T16:23:52.641+05:30  INFO 17880 --- [main] com.foodtogo.FoodToGoApplication         : Started FoodToGoApplication in 8.695 seconds (process running for 10.211)

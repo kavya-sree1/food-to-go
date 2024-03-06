@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>food.to.go</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+		body {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url("images/cartbgi.png")
+		}
+
+		h2 {
+			color: white;
+			margin-top: 25px;
+			background-color: cadetblue;
+			box-shadow: 0 4px 6px 0 cadetblue;
+			padding: 3px;
+			width: 800px;
+		}
+
+		button {
+			width: 180px;
+			background-color: cadetblue;
+			padding: 5px;
+			border-color: aliceblue;
+			color: white;
+			margin-top: 5px;
+			font-size: 18px;
+			font-weight: 400;
+		}
+
+		button:hover {
+			cursor: pointer;
+		}
+
+		table {
+			margin-top: 20px;
+			border: 2px solid cadetblue;
+			margin-bottom: 30px;
+		}
+
+		table tr td {
+			padding: 18px;
+		}
+
+		.sp {
+			margin: 10px;
+		}
+
+		.spa {
+			font-size: 20px;
+			padding: 5px;
+			margin-top: 85px;
+			width: 600px;
+		}
+
+		table {
+			border: 2px solid cadetblue;
+			background-color: white;
+		}
+
+		table tr td {
+			padding: 5px;
+		}
+
+		button {
+			float: right;
+			margin-right: 20px;
+			border: none;
+			background-color: cadetblue;
+			padding: 5px;
+			color: white;
+		}
+
+		#btn {
+			padding: 2px;
+			background-color: cadetblue;
+			border-radius: 5px;
+			float: left;
+			color: white;
+			width: 60px;
+			border-color: aliceblue;
+		}
+		 img {
+    width: 130px;
+    height: 80px;
+    border-radius: 5px;
+}
+.food-item-card {
+    width: 150px; 
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px; 
+}
+
+	</style>
+</head>
+
+<body>
+	<a th:href="@{/ohome}"><button id="btn">Go Back</button></a>
+	<center>
+		<h2>Update Order Status</h2>
+		<div class="spa">
+			<span th:text="${order}"></span><br>
+		</div>
+		<center>
+			<div class="card-body">
+                <h3>Ordered Items:</h3>
+                <div class="ordered-items">
+                 <div class="food-item-card" th:each="item: ${citems}">
+                            <div class="card-body">
+                                <img th:src="${item.foodItem.imageUrl}" alt="Item Image">
+                                <p><span th:text="${item.foodItem.itemName}"></span></p>
+                            </div>
+                    </div>  
+                </div>
+            </div>
+		</center>
+		<div class="sp">
+			<span th:text="${message}"></span>
+		</div>
+		<form th:action="@{/status}" method="post">
+			<table>
+				<tr>
+					<td><label>Enter Order Id</label></td>
+					<td><input type="number" name="orderId" id="orderId" placeholder="orderId"></td>
+				</tr>
+				<tr>
+					<td><label>Enter Customer Id</label></td>
+					<td><input type="text" name="custId" id="custId" placeholder="customerId"></td>
+				</tr>
+				<tr>
+					<td><label>Update Status</label></td>
+					<td><input type="text" name="status" id="status" placeholder="status"></td>
+				</tr>
+				<td></td>
+				<td><button>Update</button></td>
+			</table>
+		</form>
+	</center>
+</body>
+
+</html>

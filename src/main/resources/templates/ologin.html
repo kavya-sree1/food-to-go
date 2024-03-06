@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>food.to.go</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	<style>
+		body{
+			background-image: url("images/newreg.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		form{
+			border:3px solid white;
+			margin:110px 400px 10px 400px;
+			align-self: center;
+			padding:15px 40px 15px 40px;
+			box-shadow: 0px 4px 4px 0px white;
+		}
+		h2{
+			margin-left:100px;
+			color:white;
+
+		}
+		button{
+			margin-left:140px;
+			width: 115px;
+			padding-right: 5px;
+		}
+		a{
+			text-decoration: underline;
+			text-decoration-color: black;
+		}
+		span{
+			color:white;
+			padding:8px;
+			font-size:18px;
+		}
+		.form-group{
+			color:white;
+		}	
+		
+	</style>
+</head>
+<body>
+	   <center><b><span th:text="${message}"></span></b></center>
+	<form align:center th:action="@{/ohome}" method="post" onSubmit="return validatePassword()">
+   <h2>Login Form</h2><br>
+   <div class="form-group">
+    <label for="username" >Email address</label>
+    <input type="email" class="form-control" name="username" id="username" placeholder="Enter email" required>
+  </div>
+  <div class="form-group">
+    <label for="Password" >Password</label>
+    <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+  <br><br>
+  <center><a th:href="@{/oregister}">Not registered yet?Sign Up</a></center>
+  </script>
+</form>
+</body>
+</html>
+

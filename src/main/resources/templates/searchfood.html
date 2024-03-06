@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>food.to.go</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+		body {
+			background-image: url("images/cartbgi.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		img {
+			height: 100px;
+			width: 400px;
+		}
+
+		#btn {
+			padding: 4px;
+			background-color: white;
+			border-color: aliceblue;
+			border-radius: 5px;
+			color: cadetblue;
+			width: 60px;
+			margin-left: 5px;
+		}
+
+		.row {
+			margin-top: 10px;
+			margin-left: 30px;
+		}
+
+		.card {
+			width: 300px;
+			margin-top:15px;
+			margin-bottom: 20px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			transition: 0.3s;
+		}
+
+		.card:hover {
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		.card-img-top {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+		}
+
+		.card-title {
+			margin-bottom: 0.5rem;
+		}
+
+		.card-body {
+			padding: 1rem;
+		}
+
+		.btn-primary {
+			background-color: cadetblue;
+			color: #fff;
+			border: none;
+		}
+
+		.btn-primary:hover {
+			background-color: skyblue;
+		}
+
+		h1 {
+			color: white;
+			padding: 3px;
+			background-color: cadetblue;
+			box-shadow: 0 4px 6px 0 grey;
+			margin-left: 100px;
+			margin-right: 100px;
+			margin-bottom: 10px;
+		}
+
+	</style>
+</head>
+
+<body>
+		<a th:href="@{/home}"><button id="btn">Home</button></a>
+	<center>
+		<h1>Available Restaurants</h1>
+	</center>
+	<div th:if="${#lists.isEmpty(restaurants)}">
+		<p>No restaurants available.</p>
+	</div>
+	<div th:if="${#lists.isEmpty(restaurants)}">
+		<p>No restaurants available.</p>
+	</div>
+	<div th:if="${not #lists.isEmpty(restaurants)}">
+		<div class="row">
+			<div class="col-md-4 mb-4" th:each="restaurant : ${restaurants}">
+				<div class="card">
+					<img class="card-img-top" th:src="${restaurant.imageUrl}" alt="Restaurant image">
+					<div class="card-body">
+						<h5 class="card-title" th:text="${restaurant.restName}"></h5>
+						<form th:action="@{/fooditem}" method="post">
+							<input type="hidden" name="restaurantId" th:value="${restaurant.restId}" />
+							<button type="submit" class="btn btn-primary">View Menu</button>
+						</form>
+					</div>
+					<div class="card-footer">
+						<h4 th:text="${name}"></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

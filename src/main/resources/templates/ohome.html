@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>food.to.go</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	<style>
+		body{
+			background-repeat: no-repeat;
+			background-size:cover;
+			background-image:url("images/cartbgi.png")
+		}
+		.center{
+			margin:20px;
+			height:80px;
+			width:400px;
+			border-radius: 10px;
+		}
+		.but{
+			margin-top:50px;
+			
+		}
+		.but button{
+			background-color: cadetblue;
+			color:black;
+			font-weight: 500;
+			font-size: 20px;
+			padding:20px;
+			border:5px solid slategrey;
+			border-radius:10px;
+			width:400px;
+			margin-top:80px;
+		}
+		.but button:hover{
+			cursor:pointer;
+			background-color: aliceblue;
+		}
+		.contain{
+			display:flex;
+			flex-wrap:wrap;
+			justify-content:space-around;
+			margin-top:20px;
+		}
+		.contain .center img{
+			height:450px;
+			width:450px;
+		}
+		button{
+			margin-top:-30px;
+			background-color: cadetblue;
+			border-color: aliceblue;
+			float: right;
+			padding:2px;
+			color:white;
+			width:60px;
+		}
+
+	</style>
+</head>
+<body>
+	<center>
+	<img src="images/adminlog.png" class="center">
+	</center>
+	<a th:href="@{/ologout}"><button>Logout</button></a>
+	<a th:href="@{/index}"><button>Back</button></a>
+	<div class="contain">
+	<div class="center"><img src="images/ind.png"></div>
+	<div class="but"><center>
+	<a th:href="@{/fchange}"><button>Manage food items</button></a><br>
+	<a th:href="@{/status}">
+	<button>change status of the order</button>
+	</a>
+	</center>
+	</div>
+	</div>
+</body>
+</html>

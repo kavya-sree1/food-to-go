@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>food.to.go</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style>
+		body {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url("images/cartbgi.png")
+		}
+		img {
+			height: 30px;
+			width: 30px;
+		}
+
+		#foot button {
+			width: 160px;
+			background-color: cadetblue;
+			padding: 8px;
+			font-size: 18px;
+			border-color: aliceblue;
+			color: white;
+			margin-top: 5px;
+			font-weight: 600;
+		}
+
+		#foot button:hover {
+			cursor: pointer;
+		}
+
+		#foot {
+			margin-top: 15px;
+		}
+
+		table tr td {
+			font-size: 20px;
+		}
+
+
+		#remove {
+			background-color: white;
+			width: 15px;
+			height: 15px;
+			border: none;
+
+		}
+
+		#remove:hover {
+			cursor: pointer;
+		}
+
+		.h {
+			color: white;
+			padding: 3px;
+			background-color: cadetblue;
+			box-shadow: 0 4px 6px 0 grey;
+			margin-left: 100px;
+			margin-right: 100px;
+			margin-bottom: 10px;
+		}
+
+		.center {
+			margin-left: 80px;
+			margin-right: auto;
+			margin-top: 90px;
+			font-size: 20px;
+			border: 2px solid cadetblue;
+			padding: 30px;
+			margin-bottom: 50px;
+			background-color: white;
+		}
+
+		.center tr td {
+			padding: 15px;
+		}
+
+		.center {
+			width: 700px;
+		}
+
+		.center tr {
+			border: 2px solid cadetblue;
+		}
+
+		a {
+			margin-top: 5px;
+		}
+
+		.side {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.right img {
+			height: 300px;
+			width: 400px;
+			margin-top: 90px;
+		}
+
+		#btn {
+			padding: 3px;
+			background-color: cadetblue;
+			color: white;
+			width: 60px;
+			border-color: aliceblue;
+		}
+
+		input {
+			width: 40px;
+			height: 40px;
+		}
+
+		img {
+			height: 200px;
+		}
+
+		.card #buy {
+			width: 300px;
+			align-content: center;
+		}
+	</style>
+</head>
+
+<body>
+	<a th:href="@{/home}"><button id="btn">Home</button></a>
+	<center>
+		<div class="h">
+			<h1>Manage Cart</h1>
+	</center>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Cart Items</h5>
+						<div class="row">
+							<div th:each="item : ${citems}" class="col-md-4">
+								<div class="card mb-3">
+									<div class="card-body">
+										<img th:src="${item.foodItem.imageUrl}" class="card-img-top"
+											alt="Food Item Image">
+										<h5 class="card-title" th:text="${item.foodItem.itemName}"></h5>
+										<p class="card-text">Price: $<span th:text="${item.foodItem.price}"></span></p>
+										<a th:href="@{/deletecart/{cartId}(cartId=${item.cartId})}"
+											class="btn btn-danger">Remove</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-md-12">
+				<div class="card" id="buy">
+					<div class="card-body">
+						<h5 class="card-title">Cart Total</h5>
+						<p class="card-text">Total: $<span th:text="${sum}"></span></p>
+						<form th:action="@{/buyitem}" method="get">
+							<button type="submit" class="btn btn-primary">Buy</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>food.to.go</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style>
+		body {
+			background-image: url("images/newreg.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		form {
+			border: 3px solid white;
+			margin: 40px 400px 10px 400px;
+			align-self: center;
+			padding: 15px 40px 15px 40px;
+			box-shadow: 0px 4px 4px 0px white;
+
+		}
+
+		h2 {
+			margin-left: 80px;
+			color: white;
+
+		}
+
+		button {
+			margin-left: 140px;
+			width: 115px;
+			padding-right: 5px;
+		}
+
+		a {
+			text-decoration: underline;
+			text-decoration-color: black;
+		}
+
+		.form-group {
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<form align:center id="registrationForm" th:action="@{/ologin}" th:object="${owner}" method="post">
+		<h2>Registration Form</h2><br>
+		<div class="form-group">
+			<label for="Fname">Enter Name</label>
+			<input type="text" class="form-control" th:field="${owner.ownerName}" id="Fname"
+				placeholder="Enter your Name" required>
+		</div>
+		<div class="form-group">
+			<label for="Mobile">Enter Mobile</label>
+			<input type="text" class="form-control" id="Mobile" th:field="${owner.phoneNo}"
+				placeholder="Enter Mobile No" required>
+		</div>
+		<div class="form-group">
+			<label for="Email">Email address</label>
+			<input type="email" class="form-control" id="Email" th:field="${owner.email}" placeholder="Enter email"
+				required>
+		</div>
+		<div class="form-group">
+			<label for="Password">Enter Password</label>
+			<input type="password" class="form-control" id="Password" th:field="${owner.password}"
+				placeholder="Password" required>
+		</div>
+		<div class="form-group">
+			<label for="Address">Enter Address</label>
+			<input type="text" class="form-control" id="Address" th:field="${owner.address}" placeholder="Address"
+				required>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+		<a th:href="@{/ologin}">Registered?login</a>
+	</form>
+	<script>
+		document.getElementById('registrationForm').addEventListener('submit', function (event) {
+			var password = document.getElementById('Password').value;
+			var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+			if (!passwordRegex.test(password)) {
+				alert('Password must contain at least one uppercase letter, one lowercase letter, one digit, one special character, and be at least 8 characters long.');
+				event.preventDefault();
+				return false;
+			}
+			return true;
+		});
+	</script>
+</body>
+</html>

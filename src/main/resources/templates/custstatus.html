@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>foodtogo</title>
+	<style>
+		.container {
+			border: 2px solid cadetblue;
+			box-shadow: 0 4px 8px 0 grey;
+			padding: 20px;
+			background-color: lavender;
+			margin-left: 120px;
+			margin-right: 350px;
+			margin-top:20px;
+			width: 1000px;
+		}
+
+		h1 {
+			color: cadetblue;
+		}
+
+		div span {
+			font-size: 20px;
+			padding-top: 5px;
+		}
+
+		.sp {
+			margin-top: 5px;
+			background-color: white;
+			width: 90px;
+		}
+
+h1 {
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.ordered-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+ img {
+    width: 130px;
+    height: 80px;
+    border-radius: 5px;
+}
+.food-item-card {
+    width: 150px; 
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px; 
+}
+
+	</style>
+
+</head>
+
+<body>
+	<div class="container">
+    <h1>My orders</h1>
+    <div class="card-container">
+        <div class="card" th:each="order:${orders}">
+            <div class="card-header">
+                <h4>Order Date & Time: <span th:text="${order.orderDate}"></span></h4>
+                <h4>Order Status: <span th:text="${order.status}"></span></h4>
+            </div>
+            <div class="card-body">
+                <h3>Ordered Items:</h3>
+                <div class="ordered-items">
+                 <div class="food-item-card" th:each="item: ${citems}">
+                            <div class="card-body">
+                                <img th:src="${item.foodItem.imageUrl}" alt="Item Image">
+                                <p><span th:text="${item.foodItem.itemName}"></span></p>
+                            </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+</body>
+</html>

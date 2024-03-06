@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>food.to.go</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+		body {
+			background-image: url("images/cartbgi.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		button {
+			width: 220px;
+			background-color: cadetblue;
+			padding: 5px;
+			border-color: aliceblue;
+			color: white;
+			margin-top: 5px;
+			font-size: 18px;
+			font-weight: 400;
+			margin-left: 20px;
+		}
+
+		button:hover {
+			cursor: pointer;
+		}
+
+		table {
+			margin-top: 35px;
+			box-shadow: 0 4px 8px 0 lightgray;
+			padding: 15px;
+			border: 2px solid cadetblue;
+			background-color: white;
+		}
+
+		table tr td {
+			padding: 20px;
+		}
+
+		.h {
+			color: white;
+			padding: 3px;
+			background-color: cadetblue;
+			margin-top: 5px;
+			width: 800px;
+			box-shadow: 0 2px 4px 0 cadetblue;
+		}
+
+		h3 {
+			padding: -10px;
+			margin-top: -10px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<h1 class="h">Select a payment method</h1><br><br>
+		<h3>Total Amount :<span th:text="${sum}"></span></h3>
+	</center>
+	<table align="center">
+		<tr>
+			<td><label>Enter delivery Address:</label></td>
+			<td><textarea rows="3" cols="25" placeholder="enter address here" required></textarea></td>
+		</tr>
+		<tr>
+			<td><label>Select payment mode:</label></td>
+			<td>
+				<input type="radio">
+				<label>Cash on delivery</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+				<form th:action="@{/odetails}" method="get">
+					<center><button>Place Order</button></center>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+				<input type="radio">
+				<label>Pay Online</label>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<form th:action="@{/onlinepay}" method="get">
+					<center><button>Proceed to Pay</button></center>
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>

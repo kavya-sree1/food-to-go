@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>food.to.go</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style>
+		h1 {
+			color: white;
+			padding: 3px;
+			background-color: cadetblue;
+			box-shadow: 0 4px 6px 0 grey;
+			margin-left: 100px;
+			margin-right: 100px;
+			margin-bottom: 10px;
+		}
+		body {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url("images/cartbgi.png")
+		}
+
+		button {
+			background-color: aliceblue;
+			border-color: cadetblue;
+			font-weight: 400;
+			border-radius: 8px;
+			padding: 8px;
+			width: 150px;
+		}
+
+		button:hover {
+			cursor: pointer;
+			background-color: white;
+		}
+
+		form {
+			padding-top: 15px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>
+		<center>Add Food Item
+	</h1>
+	<center>
+		<form th:action="@{/updatefood}" th:object="${item}" method="Post">
+			<label>Enter Food Item Name</label>
+			<input type="text" th:field="${item.itemName}" placeholder="Enter Food Item Name"
+				class="form-control mb-4 col-4" required>
+			<label>Enter Price</label>
+			<input type="text" th:field="${item.price}" placeholder="Enter Price" class="form-control mb-4 col-4"
+				required>
+			<label>Enter Availability Status</label>
+			<input type="text" th:field="${item.availability}" placeholder="Availability status"
+				class="form-control mb-4 col-4" required>
+			<label>Food Image Url</label>
+			<input type="text" th:field="${item.imageUrl}" class="form-control mb-4 col-4" required>
+			<button type="submit">Save Food Item</button>
+		</form>
+		<hr>
+		<a th:href="@{/fchange}">Back to Food Items List</a>
+	</center>
+</body>
+
+</html>

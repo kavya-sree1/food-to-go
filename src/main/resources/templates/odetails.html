@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<style>
+		h3 {
+			color: limegreen;
+			font-size: 35px;
+			margin-bottom: 30px;
+			margin-top: -20px;
+		}
+
+		.sp {
+			font-size: 20px;
+			background-color: lightblue;
+			padding: 5px;
+			margin-top: 65px;
+			border: 2px solid aliceblue;
+			width: 600px;
+		}
+
+		img {
+			height: 220px;
+			width: 220px;
+		}
+
+		.container {
+			border: 2px solid limegreen;
+			margin-left: 300px;
+			margin-right: 300px;
+			margin-top: 40px;
+			padding-bottom: 30px;
+		}
+
+		button {
+			width: 150px;
+			background-color: cadetblue;
+			padding: 4px;
+			border-color: aliceblue;
+			color: white;
+			margin-top: 50px;
+			font-size: 18px;
+			font-weight: 400;
+		}
+
+		button:hover {
+			cursor: pointer;
+		}
+
+		a {
+			margin-top: 5px;
+		}
+
+		table {
+			border: 1px solid cadetblue;
+		}
+
+		table tr td {
+			padding: 2px;
+		}
+
+		button {
+			margin-top: -30px;
+			background-color: limegreen;
+			padding: 2px;
+			color: black;
+			width: 60px;
+		}
+	</style>
+</head>
+<body>
+	<a th:href="@{/home}"><button>Home</button></a>
+	<center>
+		<div class="container">
+			<img src="images/pc.gif">
+			<h3>Order Successful</h3>
+			<div class="sp">
+				<span th:text="${order}"></span>
+			</div>
+			<h4>Ordered Items</h4>
+			<table>
+				<tr th:each="item:${citems}">
+					<td th:text="${item.foodItem.ItemName}"></td>
+				</tr>
+			</table>
+		</div>
+	</center>
+</body>
+</html>
